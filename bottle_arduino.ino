@@ -1,11 +1,4 @@
-/* Electronoobs Bluetooth data receive with
- * Android and Arduino. Small example.
- * Remember to disconnect the Rx and Tx pins of the HC-06 when
- * uploading the code
- * 
- * Subscribe: http://www.youtube.com/c/ELECTRONOOBS
- * Tutorial: http://www.electronoobs.com/eng_arduino_tut20_2.php
- */
+
 const int trigPin = 6; 
 const int echoPin = 7; 
 long duration, cm; 
@@ -68,7 +61,7 @@ void loop()
     count++;
    }
   
-  //if water level has not been changed in 12 seconds then notify
+  //if water level has not been changed in 12 (3*4) seconds then notify
    if(count ==4) 
    { 
       digitalWrite(buzzPin, HIGH); 
@@ -243,9 +236,6 @@ void loop()
  String temp_str = "Temperature is: "; 
  temp_str.concat(temp); //join the string and temperature value
  Serial.print(temp_str);
-   
-   // You can have more than one DS18B20 on the same bus.  
-   // 0 refers to the first IC on the wire 
    delay(3000); 
 }
 
